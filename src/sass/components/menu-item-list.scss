@@ -1,0 +1,74 @@
+.menu-item-list {
+  & > .menu-item {
+    margin-bottom: 12px;
+    position: relative;
+    .menu-card {
+      display: flex;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      & > div {
+        transition: all 0.5s;
+      }
+      & > .menu-card__info {
+        width: 100%;
+        position: relative;
+        padding: 12px 15px;
+        & > p.info__name,
+        & > p.info__compo {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: calc(100% - 45px);
+        }
+        & > p.info__name {
+          font-weight: 500;
+          font-size: 18px;
+          margin-bottom: 5px;
+        }
+        & > p.info__compo {
+          font-weight: 300;
+          font-size: 15px;
+        }
+        & > p.info__price {
+          position: absolute;
+          font-weight: 500;
+          font-size: 18px;
+          right: 15px;
+          bottom: 15px;
+        }
+      }
+      & > .menu-card__checked {
+        display: flex;
+        background-color: var(--tertiary-color);
+        position: absolute;
+        right: -59px;
+        height: 100%;
+        width: 59px;
+        & > i {
+          margin: auto;
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+    & > input.menu-item__checkbox {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      opacity: 0;
+      cursor: pointer;
+      &:checked + .menu-card {
+        & > .menu-card__info {
+          width: calc(100% - 59px);
+        }
+        & > .menu-card__checked {
+          right: 0px;
+        }
+      }
+    }
+  }
+}

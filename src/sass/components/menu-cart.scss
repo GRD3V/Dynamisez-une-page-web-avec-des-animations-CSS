@@ -1,0 +1,31 @@
+.menu-card {
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  & > .menu-card__info {
+    width: 100%;
+    position: relative;
+    padding: 12px 15px;
+    & > p.info__name {
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    & > p.info__compo {
+      font-weight: 300;
+      font-size: 15px;
+    }
+    & > p.info__price {
+      position: absolute;
+      font-weight: 500;
+      font-size: 18px;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+  & > .menu-card__checked {
+    width: 0%;
+    opacity: 0;
+  }
+}

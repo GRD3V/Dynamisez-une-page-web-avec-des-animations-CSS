@@ -1,0 +1,28 @@
+{
+  "name": "dynamisez-une-page-web-avec-des-animations-css",
+  "version": "1.0.0",
+  "homepage": "https://grd3v.github.io/Dynamisez-une-page-web-avec-des-animations-CSS/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GRD3V/Dynamisez-une-page-web-avec-des-animations-CSS.git"
+  },
+  "author": {
+    "name": "GRD3V",
+    "email": "raphael@grd3v.org",
+    "url": "https://github.com/GRD3V/"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build:sass": "sass src/sass/main.scss:dist/css/style.css",
+    "watch:sass": "sass --watch src/sass/main.scss:dist/css/style.css",
+    "build:html": "cp src/index.html dist/index.html && cp -r src/restaurants dist/restaurants",
+    "watch:html": "yarn chokidar \"src/**/*.html\" -c \"yarn build:html\"",
+    "build": "yarn build:sass && yarn build:html",
+    "watch": "yarn watch:sass & yarn watch:html"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "sass": "^1.70.0"
+  }
+}

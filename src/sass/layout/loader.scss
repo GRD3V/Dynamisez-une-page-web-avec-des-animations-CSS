@@ -1,0 +1,28 @@
+.website-loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--bg-secondary-color);
+  animation: fadeOut 0.7s forwards;
+  animation-delay: 2s;
+  overflow: hidden;
+  display: flex;
+
+  .website-loader__content {
+    animation: fadeOut 0.5s forwards;
+    animation-delay: 2s;
+    margin: auto;
+    display: flex;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      z-index: -9999;
+    }
+  }
+}
