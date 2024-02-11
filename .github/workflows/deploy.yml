@@ -2,9 +2,9 @@ name: Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   pull_request:
-    branches: ["main"]
+    branches: ["master"]
   
   workflow_dispatch:
 
@@ -30,7 +30,7 @@ jobs:
           cache: "yarn"
       - run: yarn install
       - run: yarn build
-      - name: Deploy
+      - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
