@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy Pages
 
 on:
   push:
@@ -30,8 +30,10 @@ jobs:
           cache: "yarn"
       - run: yarn install
       - run: yarn build
-      - name: Deploy Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          target_branch: gh-pages
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
